@@ -44,7 +44,7 @@ export default function TopicSection() {
                 <div className='w-full mt-10 flex flex-col gap-5'>
                     {posts.map((item, index) => {
                         return (
-                            <div className='flex items-center h-fit w-full gap-5'>
+                            <div key={index} className='flex items-center h-fit w-full gap-5'>
                                 <p className='text-[36px] font-medium'>{index + 1}.</p>
                                 <div className='relative w-[350px] h-[200px] rounded-[20px] overflow-hidden'>
                                     <img className='w-full h-full object-cover' src={item.image}></img>

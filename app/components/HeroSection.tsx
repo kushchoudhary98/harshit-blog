@@ -3,6 +3,7 @@ import imgSecondary from './assets/hero-secondary.png'
 import linkArrow from './assets/link-arrow.svg'
 import dot from './assets/dot.png'
 import arrow from './assets/arrow.png'
+import { motion } from 'framer-motion'
 
 export default function HeroSection() {
     return (
@@ -15,19 +16,26 @@ export default function HeroSection() {
                             <p className='text-[18px]'>see all posts</p>
                             <img src={arrow}></img>
                         </div>
-                        <div className='relative'>
-                            <p className='absolute top-5 left-5 font-medium text-[20px] bg-white px-5 py-3 rounded-full'>Sept 6, 2023</p>
-                            <div className='absolute right-5 top-5 bg-[#ffffffc4] backdrop-blur-[150px] h-[65px] w-[65px] p-4 rounded-full flex justify-center items-center'>
+                        <div className='relative overflow-hidden rounded-[50px]'>
+                            <p className='absolute z-10 top-5 left-5 font-medium text-[20px] bg-white px-5 py-3 rounded-full'>Sept 6, 2023</p>
+                            <div className='absolute z-10 right-5 top-5 bg-[#ffffffc4] backdrop-blur-[150px] h-[65px] w-[65px] p-4 rounded-full flex justify-center items-center'>
                                 <img src={linkArrow}></img>
                             </div>
-                            <div className='absolute flex flex-col gap-3 bottom-5 left-5 bg-[#ffffffc4] backdrop-blur-[150px] rounded-[50px] px-10 py-5 w-[700px]'>
+                            <div className='absolute z-10 flex flex-col gap-3 bottom-5 left-5 bg-[#ffffffc4] backdrop-blur-[150px] rounded-[50px] px-10 py-5 w-[700px]'>
                                 <div className='flex gap-2 w-fit items-center bg-white rounded-full py-2 px-5'>
                                     <img src={dot}></img>
                                     <p className='text-[20px] font-semibold'>Technology</p>
                                 </div>
                                 <p className='text-[40px]'>Top 10 things to get the most out of your PC.</p>
                             </div>
-                            <img src={imgPrimary} className='w-full h-[65vh] object-cover rounded-[50px]'></img>
+                            <motion.img
+                                initial={{ scale: 1 }}
+                                whileHover={{ scale: 1.05,
+                                    transition: {
+                                        duration: 1
+                                    }
+                                 }}
+                                src={imgPrimary} className='w-full -z-10 h-[65vh] object-cover rounded-[50px]'></motion.img>
                         </div>
                     </div>
                 </div>
@@ -45,19 +53,26 @@ export default function HeroSection() {
                                 <p>Real talk in a corporate world.</p>
                             </div>
                         </div>
-                        <div className='w-full h-[60%] relative'>
-                            <p className='absolute top-5 left-5 font-medium text-[20px] bg-white px-5 py-3 rounded-full'>Sept 6, 2023</p>
-                            <div className='absolute right-5 top-5 bg-[#ffffffc4] backdrop-blur-[150px] h-[65px] w-[65px] p-4 rounded-full flex justify-center items-center'>
+                        <div className='w-full h-[60%] overflow-hidden rounded-[50px] relative'>
+                            <p className='absolute z-10 top-5 left-5 font-medium text-[20px] bg-white px-5 py-3 rounded-full'>Sept 6, 2023</p>
+                            <div className='absolute z-10 right-5 top-5 bg-[#ffffffc4] backdrop-blur-[150px] h-[65px] w-[65px] p-4 rounded-full flex justify-center items-center'>
                                 <img src={linkArrow}></img>
                             </div>
-                            <div className='absolute flex flex-col gap-3 bottom-0 left-0 bg-[#ffffffc4] backdrop-blur-[150px] rounded-[50px] px-10 py-5 w-full'>
+                            <div className='absolute z-10 flex flex-col gap-3 bottom-0 left-0 bg-[#ffffffc4] backdrop-blur-[150px] rounded-[50px] px-10 py-5 w-full'>
                                 <div className='flex gap-2 w-fit items-center bg-white rounded-full py-2 px-5'>
                                     <img src={dot}></img>
                                     <p className='text-[20px] font-semibold'>Health</p>
                                 </div>
                                 <p className='text-[40px]'>Benefits of laughing.</p>
                             </div>
-                            <img src={imgSecondary} className='w-full h-full object-cover rounded-[50px]'></img>
+                            <motion.img
+                                initial={{ scale: 1 }}
+                                whileHover={{ scale: 1.05,
+                                    transition: {
+                                        duration: 1
+                                    }
+                                 }}
+                                src={imgSecondary} className='w-full h-full -z-10 object-cover rounded-[50px]'></motion.img>
                         </div>
                     </div>
                 </div>

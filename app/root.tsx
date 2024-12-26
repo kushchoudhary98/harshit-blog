@@ -9,6 +9,7 @@ import {
 
 import type { Route } from "./+types/root";
 import stylesheet from "./app.css?url";
+import { AnimatePresence, motion } from "framer-motion";
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -43,7 +44,22 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
-  return <Outlet />;
+  return (
+    <AnimatePresence>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={
+          {
+            duration: 0.5
+          }
+        }
+      >
+        <Outlet />
+      </motion.div>
+    </AnimatePresence>
+  );
 }
 
 export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
