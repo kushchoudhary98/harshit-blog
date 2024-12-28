@@ -5,6 +5,7 @@ export default [
     route("articles", "routes/articles.tsx"),
     route("login", "routes/auth/login.jsx"),
     route("profile", "routes/auth/profile.jsx"),
+    route("create-blog", "routes/auth/newBlog.jsx"),
     route("invalid", "routes/auth/invalid-user.jsx"),
     route("blog/:blogId", "routes/blog.tsx"),
 ] satisfies RouteConfig;

@@ -3,6 +3,7 @@ import type { Route } from "./+types/home";
 import HeroSection from "~/components/HeroSection";
 import TopicSection from "~/components/TopicSection";
 import Credits from "~/components/Credits";
+import ContactUs from "~/components/ContactUs";
 import ReactLenis from "lenis/react";
 
 export function meta({ }: Route.MetaArgs) {
@@ -18,6 +19,7 @@ export default function Home() {
       <NavBar />
       <HeroSection />
       <TopicSection />
+      <ContactUs />
       <Credits />
     </ReactLenis>
   );

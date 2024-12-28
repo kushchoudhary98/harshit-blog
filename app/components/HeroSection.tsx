@@ -8,15 +8,19 @@ import { motion } from 'framer-motion'
 export default function HeroSection() {
     return (
         <div className='w-full h-full flex items-center flex-col'>
-            <div className='font-sans tracking-tighter leading-tight flex w-[98%] h-[85vh] justify-evenly items-center'>
+            <div className='font-sans tracking-tighter leading-tight flex flex-col xl:flex-row w-[98%] min-h-[85vh] justify-evenly items-center'>
                 <div className='w-[70%] h-full flex items-end'>
                     <div className='w-full flex flex-col'>
-                        <div className='flex items-baseline gap-3'>
-                            <h1 className='text-[80px] font-medium'>Blogs of the week</h1>
+                        <div className='flex items-baseline gap-3 mt-20'>
+                            <h1 className='2xl:text-[80px] md:text-[5vw] text-[40px] font-medium'>Blogs of the week</h1>
                             <p className='text-[18px]'>see all posts</p>
                             <img src={arrow}></img>
                         </div>
-                        <div className='relative overflow-hidden rounded-[50px]'>
+                        <motion.button
+                            onClick={() => window.location.href = '/blog/1'}
+                            initial="initial"
+                            whileHover="hover"
+                            className='relative overflow-hidden rounded-[50px]'>
                             <p className='absolute z-10 top-5 left-5 font-medium text-[20px] bg-white px-5 py-3 rounded-full'>Sept 6, 2023</p>
                             <div className='absolute z-10 right-5 top-5 bg-[#ffffffc4] backdrop-blur-[150px] h-[65px] w-[65px] p-4 rounded-full flex justify-center items-center'>
                                 <img src={linkArrow}></img>
@@ -26,34 +30,37 @@ export default function HeroSection() {
                                     <img src={dot}></img>
                                     <p className='text-[20px] font-semibold'>Technology</p>
                                 </div>
-                                <p className='text-[40px]'>Top 10 things to get the most out of your PC.</p>
+                                <p className='text-[40px] text-left'>Top 10 things to get the most out of your PC.</p>
                             </div>
                             <motion.img
-                                initial={{ scale: 1 }}
-                                whileHover={{ scale: 1.05,
-                                    transition: {
-                                        duration: 1
-                                    }
-                                 }}
+                                variants={{
+                                    initial: { scale: 1 },
+                                    hover: { scale: 1.05},
+                                }}
+                                transition={{ duration: 1 }}
                                 src={imgPrimary} className='w-full -z-10 h-[65vh] object-cover rounded-[50px]'></motion.img>
-                        </div>
+                        </motion.button>
                     </div>
                 </div>
-                <div className='w-[25%] h-full'>
-                    <div className='w-full h-full flex flex-col justify-between'>
-                        <div className='relative flex flex-col justify-between w-full h-[37.5%] bg-[#ECE4D7] rounded-[50px] p-10'>
+                <div className='w-[25%] h-full flex flex-col items-end'>
+                    <div className='w-full h-full flex flex-col justify-between gap-5'>
+                        <motion.button className='relative flex flex-col justify-between w-full h-[37.5%] bg-[#ECE4D7] rounded-[50px] p-10'>
                             <div className='absolute right-5 top-5 bg-[#ffffffc4] backdrop-blur-[150px] h-[65px] w-[65px] p-4 rounded-full flex justify-center items-center'>
                                 <img src={linkArrow}></img>
                             </div>
-                            <div className='text-[24px]'>
+                            <div className='text-[24px] text-left'>
                                 <p>Become A</p>
                                 <p>BROADCAST MEMBER</p>
                             </div>
-                            <div className='text-[36px] font-medium'>
+                            <div className='text-[36px] text-left font-medium'>
                                 <p>Real talk in a corporate world.</p>
                             </div>
-                        </div>
-                        <div className='w-full h-[60%] overflow-hidden rounded-[50px] relative'>
+                        </motion.button>
+                        <motion.button
+                            onClick={() => window.location.href = '/blog/2'}
+                            initial="initial"
+                            whileHover="hover"
+                            className='w-full h-[60%] overflow-hidden rounded-[50px] relative'>
                             <p className='absolute z-10 top-5 left-5 font-medium text-[20px] bg-white px-5 py-3 rounded-full'>Sept 6, 2023</p>
                             <div className='absolute z-10 right-5 top-5 bg-[#ffffffc4] backdrop-blur-[150px] h-[65px] w-[65px] p-4 rounded-full flex justify-center items-center'>
                                 <img src={linkArrow}></img>
@@ -66,14 +73,13 @@ export default function HeroSection() {
                                 <p className='text-[40px]'>Benefits of laughing.</p>
                             </div>
                             <motion.img
-                                initial={{ scale: 1 }}
-                                whileHover={{ scale: 1.05,
-                                    transition: {
-                                        duration: 1
-                                    }
-                                 }}
+                                variants={{
+                                    initial: { scale: 1 },
+                                    hover: { scale: 1.05},
+                                }}
+                                transition={{ duration: 1 }}
                                 src={imgSecondary} className='w-full h-full -z-10 object-cover rounded-[50px]'></motion.img>
-                        </div>
+                        </motion.button>
                     </div>
                 </div>
             </div>
